@@ -84,7 +84,7 @@ After reading, answer all nine. Write these down before moving to Step 2.
    "none — landing-page only" and rely on the strongest visual (Q3) instead.
 ```
 
-## Color extraction
+## Color extraction (context and captioning only — not the video's visual identity)
 
 When reading CSS, look for custom properties like:
 
@@ -104,7 +104,15 @@ Write down:
 - Accent/brand color
 - Any gradient or special treatment
 
-These colors are recorded in `composition-brief.md` and carry into the design spec the current hyperframes-creative workflow scaffolds.
+**These colors are for context and captioning only.** Record them in `brag-plan.md`'s source
+palette line and in `composition-brief.md`'s Source Material section so the plan can describe
+what's being shown — but they no longer set the video's chrome. Every `/brag` video renders in
+Simform's fixed brand (coral/purple/white, Simform typography, bento-grid tiles) regardless of
+the target project's palette — see
+[../frame-presets/simform-bento/FRAME.md](../frame-presets/simform-bento/FRAME.md) and Step
+2's Visual identity section. The only place the target's own colors appear on screen is inside
+a literal screenshot or recreation of the product's actual UI, which naturally keeps its own
+on-screen colors.
 
 ## Font extraction
 
@@ -113,7 +121,9 @@ Look for:
 - Google Fonts `<link>` in `<head>` (the font families are in the URL query string)
 - `@import` statements
 
-Write down the display font (used for headings) and the body font separately.
+Write down the display font (used for headings) and the body font separately. As with colors
+above, this is recorded for context/captioning and for any literal UI recreation — the video's
+own chrome typography always uses Simform's fixed type system, not the target project's fonts.
 
 ## What to skip
 

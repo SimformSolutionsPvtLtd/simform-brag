@@ -39,12 +39,22 @@ Create a short launch-style brag video for [App Name].
   - Unrelated visual redesign
 
 ## Visual Identity
-- Background: [exact value from project]
-- Text: [exact value from project]
-- Accent: [exact value from project]
-- Display font: [font or fallback decision]
-- Body font: [font or fallback decision]
-- Visual references from the project: [short list]
+- Brand takeover: Simform fixed brand — this composition's chrome (backgrounds,
+  title/highlight cards, transitions) must use Simform's coral/purple/white palette, Simform
+  typography, and bento-grid tiles, not the source project's palette.
+- Frame preset: `skills/brag/frame-presets/simform-bento/FRAME.md` (installed skill:
+  `~/.claude/skills/brag/frame-presets/simform-bento/FRAME.md`). Copy it into
+  `brag-output/composition/frame.md` before invoking the Hyperframes domain skills —
+  `hyperframes-creative` reads `frame.md` as the project's design spec automatically
+  (frontmatter = normative brand tokens; prose = composition guidance).
+- Source palette (reference only, not used for chrome): [background / accent / text values
+  from the project, for captioning/context]
+- Source typography (reference only, not used for chrome): [display / body font from the
+  project]
+- Visual references from the project: [short list — may appear on screen in original colors
+  only inside a literal screenshot or recreated UI moment]
+- Simform outro card: [include, if `--simform-outro` was passed / omit, default] — see
+  "Simform outro card" below.
 
 ## Storyboard
 Use the storyboard in `brag-output/brag-plan.md` as the creative contract.
@@ -103,6 +113,53 @@ cp <skill-assets>/music/<track>.mp3 <output-dir>/composition/assets/music/
 When running from an installed Claude skill, `<skill-assets>` is `~/.claude/skills/brag/assets/`. From the repo, it is `skills/brag/assets/`.
 
 Hyperframes copies any SFX it selects into the same `assets/` tree after choosing exact files.
+
+---
+
+## Simform frame-preset handoff
+
+Before calling the Hyperframes domain skills, copy the fixed brand spec into the composition
+directory so `hyperframes-creative` auto-discovers it as `frame.md` (see its
+`frame.md → design.md → DESIGN.md` resolution order):
+
+```bash
+cp skills/brag/frame-presets/simform-bento/FRAME.md <output-dir>/composition/frame.md
+```
+
+(From an installed skill, the source path is
+`~/.claude/skills/brag/frame-presets/simform-bento/FRAME.md`.)
+
+This makes the frame preset's frontmatter tokens (colors, typography, components) the
+composition's brand truth, per the existing `hyperframes-creative` design-spec contract —
+brand is strict, layout stays free. Do not let `hyperframes-creative` fall back to a
+project-inferred `design.md`/palette; `frame.md` wins by its own precedence rule as long as it
+exists in the composition directory before Step 3 hands off.
+
+For any scene needing a dense, multi-tile "stat wall" (5+ small metrics at once), also read
+[../frame-presets/simform-bento/references/bento-grid-technique.md](../frame-presets/simform-bento/references/bento-grid-technique.md)
+— a Simform-retextured, zero-gap grid technique adapted from the `apple-bento-grid` skill
+(github.com/hubeiqiao/apple-bento-grid, MIT). If `hubeiqiao/apple-bento-grid` is installed
+(`/plugin marketplace add hubeiqiao/apple-bento-grid`), Step 3 may also read its own
+`design-system.md` directly for the same technique in more depth; otherwise (or by default) use
+the vendored version, which is self-contained and needs no extra install.
+
+## Simform outro card (opt-in — only when `--simform-outro` is set)
+
+Only add this when the invocation included `--simform-outro`. Do not add it by default.
+
+When enabled, append one final scene after the storyboard's outro/punchline beat, before the
+hard end:
+- Logo asset: `skills/brag/frame-presets/simform-bento/assets/simform-logo.svg` (installed
+  skill: `~/.claude/skills/brag/frame-presets/simform-bento/assets/simform-logo.svg`). Copy it
+  into `<output-dir>/composition/assets/brand/simform-logo.svg` alongside the audio assets.
+- Content: the Simform logo lockup, composed per the `simform-bento` frame preset's Sign-off
+  Bento treatment, plus a short tagline/CTA line (e.g. "Engineering the next best thing for the
+  digital world", or a shorter CTA such as "Built with Simform" / "Let's build yours —
+  simform.com").
+- Duration: 1.5-2.5s, additional to the 15-25s creative-law window — note in
+  `composition-brief.md` that total duration extends by this amount when the flag is set.
+- Treat it as its own scene in the Storyboard section's scene summary, tagged
+  `[Simform outro — opt-in]`.
 
 ---
 
@@ -201,6 +258,10 @@ Before moving to delivery, verify:
 - [ ] `<output-dir>/composition-brief.md` exists.
 - [ ] The brief clearly identifies the exact product moments to show.
 - [ ] The composition uses the current Hyperframes workflow, not a hardcoded `/brag` template.
+- [ ] `frame.md` (Simform's fixed brand) was copied into `<output-dir>/composition/` before
+      the Hyperframes composition began.
+- [ ] If `--simform-outro` was passed, the Simform outro card is present with the logo asset
+      copied into `composition/assets/brand/`; if not passed, no outro card was added.
 - [ ] Music file is copied into `<output-dir>/composition/assets/music/`.
 - [ ] At least one visual element subtly reacts to the music (audio-reactive treatment present), or extraction failure is documented.
 - [ ] At least 1 major tween is beat-locked to a strong cue (a `strongCue`, or the highest-`strength` beat from `hyperframes beats`) within ±0.15s, marked `// beat-locked` (or natural timing was chosen for readability).
