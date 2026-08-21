@@ -1,13 +1,13 @@
 {
   "name": "brag",
-  "description": "Turn the current project into a short, polished, shareable launch video using HyperFrames.",
-  "version": "0.2.2",
+  "description": "Turn any project into a short, Simform-branded Pre-Sales showcase video using HyperFrames — reads the project's code directly (no live URL or screenshots needed) and renders every run in Simform's fixed coral/purple/white visual identity.",
+  "version": "0.3.0",
   "author": {
-    "name": "Shunit Haviv Hakimi",
-    "email": "shunithaviv@gmail.com"
+    "name": "Simform Solutions Pvt Ltd",
+    "email": "innovations@simformsolutions.com"
   },
   "license": "MIT",
-  "homepage": "https://github.com/latent-spaces/brag",
-  "repository": "https://github.com/latent-spaces/brag",
-  "keywords": ["video", "launch", "hyperframes", "skill"]
+  "homepage": "https://github.com/SimformSolutionsPvtLtd/simform-brag",
+  "repository": "https://github.com/SimformSolutionsPvtLtd/simform-brag",
+  "keywords": ["video", "launch", "hyperframes", "skill", "presales", "simform"]
 }

@@ -1,6 +1,56 @@
 # Tone reference
 
-Seven tones. Each changes scripting energy, pacing, typography personality, and transition style.
+Eight tones. `presales` is the default when no `--tone` flag is passed — it's Simform's fixed
+Pre-Sales voice. The other seven remain available via `--tone <preset>`. Each changes scripting
+energy, pacing, typography personality, and transition style.
+
+---
+
+## `presales` (default)
+
+**Energy:** Confident, precise, engineering-led. The product is credible because the team
+building it is credible.
+
+**Voice:** First person plural, benefit-led, present tense. States capability and outcome
+together — "what it does" plus "why it matters" — never just a feature list. No jokes, no
+memes, no self-deprecation. Confident, not boastful: claims are backed by the product's actual
+copy and features, never invented metrics.
+
+**Typography:** Sentence case or title case. Medium-to-bold weight. Clean, generous spacing —
+Simform's fixed type system (see `frame-presets/simform-bento/FRAME.md`), never the target
+project's own fonts.
+
+**Pacing:** 4-5 scenes composed as bento tiles (see `step-2-plan.md` → "Frame every scene as a
+bento tile"). Each scene 3-5 seconds. Measured, not rushed — confidence reads through clean
+holds, not speed.
+
+**Hook style:** A precise, benefit-led opening line — the problem or opportunity stated
+plainly, no setup joke.
+```
+Shipping fast usually means shipping fragile.
+Not this time.
+```
+
+**Highlight style:** Feature or capability + outcome, stated as fact, one bento tile per idea.
+```
+Real-time sync across every device.
+Zero merge conflicts, zero manual QA.
+```
+
+**Outro style:** Product name, benefit-led tagline, optional CTA. If `--simform-outro` is set,
+this beat leads into the Simform lockup card rather than closing directly.
+```
+[App Name].
+Built to move as fast as the team behind it.
+```
+
+**Transitions:** Clean slide or crossfade (0.3-0.4s) between bento tiles. No hard cuts, no
+flash cuts, no dramatic wipes — the register is precise, not theatrical.
+
+**When to use:** The default for every `/brag` run with no `--tone` flag. Client-facing,
+presales, or internal showcase contexts — any project being presented as capability proof, not
+as a joke or a meme. Reach for one of the other seven presets only when the user explicitly
+asks for a different register via `--tone`.
 
 ---
 

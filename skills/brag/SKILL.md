@@ -1,6 +1,6 @@
 ---
 name: brag
-description: Turn the current project website into a short, polished, shareable launch video using Hyperframes. Use when someone says "/brag", "let's brag about this", "make a launch video", "turn this into a video", or wants to share what they built. Reads the project code directly — no live URL or screenshots needed.
+description: Turn the current project website into a short, Simform-branded Pre-Sales showcase video using Hyperframes. Use when someone says "/brag", "let's brag about this", "make a launch video", "turn this into a video", or wants to share what they built. Reads the project code directly — no live URL or screenshots needed. Every video renders in Simform's fixed coral/purple/white bento-grid identity, regardless of the target project's own colors.
 ---
 
 # /brag
@@ -39,19 +39,27 @@ Parse these options:
 
 | Option | Values | Default |
 |---|---|---|
-| `--tone` | preset or freeform description | inferred |
+| `--tone` | preset or freeform description | `presales` |
 | `--format` | `landscape`, `vertical`, `square` | `landscape` |
 | `--duration` | seconds | auto (15-25s) |
 | `--no-music` | flag | music on |
 | `--no-sfx` | flag | sfx on |
 | `--title` | string | inferred from project |
 | `--voice` | flag | narration off |
+| `--simform-outro` | flag | off (opt-in) |
 
 Voice is opt-in. If `--voice` is present, use Kokoro via Hyperframes and do
 not add any provider-selection logic. The voice workflow is intentionally
 single-provider in this PR.
 
-Tone can be a preset (`default`, `polished`, `yc-parody`, `chaotic`, `deadpan`, `cinematic`, `app-store`) or a creative direction such as "fake Series A launch from 2016", "museum exhibit", or "overproduced mobile game ad".
+Simform outro is opt-in. If `--simform-outro` is present, append a Simform
+logo lockup + tagline/CTA card as the final scene, after the plan's own
+outro/punchline beat and before the hard end — using the vendored logo asset
+and the fixed Simform brand tokens (see "Visual identity: Simform brand
+takeover" below). Do not add this card automatically; most runs end on the
+project's own punchline.
+
+Tone can be a preset (`presales`, `default`, `polished`, `yc-parody`, `chaotic`, `deadpan`, `cinematic`, `app-store`) or a creative direction such as "fake Series A launch from 2016", "museum exhibit", or "overproduced mobile game ad". When no `--tone` is given and no freeform direction implies otherwise, use `presales` — the Simform-branded default.
 
 When the user gives freeform tone direction, map it to the nearest preset for pacing and structure, but preserve the user's direction in the plan and composition brief.
 
@@ -62,6 +70,22 @@ not simply read visible text, matches scene pacing, sounds natural and
 conversational, and moves smoothly between scenes. Keep the script concise and
 specific to the product so the voice feels like part of the edit rather than a
 separate narration track.
+
+## Visual identity: Simform brand takeover
+
+Every `/brag` video renders as Simform-branded Pre-Sales collateral. Step 2 and Step 3 must
+use Simform's fixed brand — coral/purple/white palette, Simform typography, and an
+Apple-style bento-grid tile layout — for all generated chrome (backgrounds, title/highlight
+cards, transitions), regardless of the target project's own site colors.
+
+The fixed brand lives at
+[frame-presets/simform-bento/FRAME.md](frame-presets/simform-bento/FRAME.md), in the same
+`frame.md` format `hyperframes-creative` already reads. Step 3 copies it into the composition
+as `frame.md` — see [references/step-3-compose.md](references/step-3-compose.md).
+
+The target project's own extracted colors and fonts (Step 1) are still recorded, but only as
+context/captioning — they no longer set chrome. See
+[references/step-1-inspect.md](references/step-1-inspect.md).
 
 ---
 
@@ -129,12 +153,15 @@ Validate, preview, render to `<output-dir>/brag.mp4`, pick the best poster frame
 
 ## Tone system
 
-Seven tone presets ship with `/brag`. Each changes scripting energy, pacing, typography personality, and transition style. Presets are defaults, not limits.
+Eight tone presets ship with `/brag`. `presales` is the default when no `--tone` flag is
+passed. Each changes scripting energy, pacing, typography personality, and transition style.
+Presets are defaults, not limits.
 
 Full definitions: [references/tones.md](references/tones.md)
 
 | Tone | Energy | One-liner |
 |---|---|---|
+| `presales` (default) | Confident, precise, engineering-led | Simform's benefit-led B2B voice |
 | `default` | Playful, clean, postable | The good-vibes default |
 | `polished` | Serious, elegant | For projects that are not jokes |
 | `yc-parody` | Deadpan startup energy | Fake seriousness applied to absurd projects |

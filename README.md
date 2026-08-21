@@ -11,7 +11,7 @@ The looping video on the [launch site](https://latent-spaces.github.io/brag/) wa
 ## Install
 
 ```bash
-/plugin marketplace add latent-spaces/brag
+/plugin marketplace add SimformSolutionsPvtLtd/simform-brag
 /plugin install brag@brag
 ```
 
@@ -20,7 +20,7 @@ Then run `/brag` inside any project.
 **Any other agent** — one command via the [`skills`](https://github.com/vercel-labs/skills) CLI (Cursor, Codex, Copilot, Gemini CLI, opencode, and more):
 
 ```bash
-npx skills add https://github.com/latent-spaces/brag --skill brag
+npx skills add https://github.com/SimformSolutionsPvtLtd/simform-brag --skill brag
 ```
 
 Add `-g` to install globally (available in every project); drop it to scope to the current one. ([browse on skills.sh](https://www.skills.sh/latent-spaces/brag/brag))
@@ -99,6 +99,8 @@ You get a `brag-output/` folder with the plan, a composition brief, share copy, 
 - Sound effects — [Kenney](https://kenney.nl/)
 - Video generation — [Hyperframes](https://hyperframes.heygen.com/)
 - Fake demo sites — built with [Impeccable](https://impeccable.style/)
+- Bento-grid zero-gap technique adapted from [apple-bento-grid](https://github.com/hubeiqiao/apple-bento-grid) by Joe Hu (MIT licensed)
+- Forked from [latent-spaces/brag](https://github.com/latent-spaces/brag) by [Shunit Haviv Hakimi](https://github.com/shunithaviv) (MIT licensed) — this fork adapts it into Simform-branded Pre-Sales collateral
 
 ## Contributing
 

@@ -48,13 +48,18 @@ landing-page-only, write "none — landing-page only" and rely on Key moments in
 ## Format: [landscape / vertical / square] — [width]x[height]
 ## Duration: [target seconds]
 
-## Visual identity (from the project)
-- Background: [exact color value]
-- Accent: [exact color value]
-- Text: [exact color value]
-- Display font: [name]
-- Body font: [name]
-- Strongest visual element: [what from the site to reference]
+## Visual identity
+- Brand: Simform fixed brand is in force — coral/purple/white palette, Simform typography,
+  bento-grid tile layout for all chrome (backgrounds, title/highlight cards, transitions). See
+  `frame-presets/simform-bento/FRAME.md` for the exact tokens; this file is the source of
+  truth, not the values below.
+- Source palette (reference only, not used for chrome): background [exact color value],
+  accent [exact color value], text [exact color value] — extracted from the target project
+  for context/captioning.
+- Source typography (reference only, not used for chrome): display font [name], body font
+  [name] — extracted from the target project for context/captioning.
+- Strongest visual element: [what from the site to reference — may appear on screen in its own
+  colors if it's a literal screenshot/recreation of the product UI]
 
 ## Share copy (draft)
 [One sentence for Twitter/X/LinkedIn/Discord. Punchy. Not corporate.]
@@ -73,6 +78,8 @@ landing-page-only, write "none — landing-page only" and rely on Key moments in
 
 ### Scene 1 — [name] — [duration]s
 [What's on screen. What text appears. What product material must be referenced.]
+Bento layout: [hero tile + N supporting tiles — e.g. "hero tile (headline) + 2 supporting
+  tiles (stat, logo mark)"; or "single full-bleed hero tile" for a hook/outro beat]
 Sequential/interaction: [yes — describe what appears one by one or what interaction is simulated, e.g. "3 stat cards arrive one by one" or "cursor clicks the match button"; or none]
 Audio intent: [what the sound should do emotionally]
 Audio-coupled idea: [typed text, beat-aligned reveal, counter ticks, card-by-card sequence, simulated tap/swipe/type — or none]
@@ -81,6 +88,7 @@ Transition mood: [clean / hard / dramatic / soft / chaotic] → Scene 2
 
 ### Scene 2 — [name] — [duration]s
 [...]
+Bento layout: [hero tile + N supporting tiles, or single full-bleed hero tile]
 Sequential/interaction: [yes — describe it; or none]
 Audio intent: [what the sound should do emotionally]
 Audio-coupled idea: [type or none]
@@ -91,6 +99,21 @@ Transition mood: [mood] → Scene 3
 **Music mood for this video:** [upbeat / cinematic / chaotic / deadpan / parody / none only if disabled / missing / intentionally silent]
 **Audio summary:** [one sentence describing the full audio arc]
 ```
+
+## Frame every scene as a bento tile
+
+Simform's fixed brand composes every generated scene as an Apple-style bento grid — one
+dominant tile plus supporting tiles, not full-bleed marketing slabs. Describe scenes in that
+language in the storyboard's `Bento layout:` line, for example:
+- "Hero tile (hook line) + 1 supporting tile (product wordmark)"
+- "Hero tile (key stat, e.g. '3x faster') + 2 supporting tiles (two feature callouts)"
+- "Single full-bleed hero tile" — reserved for the hook and outro beats, where a tile grid
+  would fight the punch
+
+This is a composition bias for the plan, not a layout mandate — Hyperframes decides the
+literal grid/HTML from the `simform-bento` frame preset. Real UI screenshots or recreated
+product moments (the "show the thing" law) can live inside a tile without being redesigned
+into the bento aesthetic themselves.
 
 ## Planning the scenes
 
