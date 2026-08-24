@@ -47,7 +47,7 @@ Built to move as fast as the team behind it.
 **Transitions:** Clean slide or crossfade (0.3-0.4s) between bento tiles. No hard cuts, no
 flash cuts, no dramatic wipes — the register is precise, not theatrical.
 
-**When to use:** The default for every `/brag` run with no `--tone` flag. Client-facing,
+**When to use:** The default for every `/simform-brag` run with no `--tone` flag. Client-facing,
 presales, or internal showcase contexts — any project being presented as capability proof, not
 as a joke or a meme. Reach for one of the other seven presets only when the user explicitly
 asks for a different register via `--tone`.

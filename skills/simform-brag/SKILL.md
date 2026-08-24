@@ -1,20 +1,20 @@
 ---
-name: brag
-description: Turn the current project website into a short, Simform-branded Pre-Sales showcase video using Hyperframes. Use when someone says "/brag", "let's brag about this", "make a launch video", "turn this into a video", or wants to share what they built. Reads the project code directly — no live URL or screenshots needed. Every video renders in Simform's fixed coral/purple/white bento-grid identity, regardless of the target project's own colors.
+name: simform-brag
+description: Turn the current project website into a short, Simform-branded Pre-Sales showcase video using Hyperframes. Use when someone says "/simform-brag", "let's brag about this", "make a launch video", "turn this into a video", or wants to share what they built. Reads the project code directly — no live URL or screenshots needed. Every video renders in Simform's fixed coral/purple/white bento-grid identity, regardless of the target project's own colors.
 ---
 
-# /brag
+# /simform-brag
 
 You built it. Now let's brag about it.
 
 ## Invocation dispatch (must happen first)
 
-Before inspecting the project, parse the complete `/brag` invocation. If the
+Before inspecting the project, parse the complete `/simform-brag` invocation. If the
 invocation contains `--voice`, set `voice.enabled = true`. Enable narration
 only for that run. Do not enable narration automatically and do not fall back
 to the normal no-voice workflow.
 
-`/brag` turns the current project website or app into a short, polished, shareable launch video using Hyperframes. It is narrow, opinionated, and fun.
+`/simform-brag` turns the current project website or app into a short, polished, shareable launch video using Hyperframes. It is narrow, opinionated, and fun.
 
 ## What this skill does
 
@@ -29,10 +29,10 @@ to the normal no-voice workflow.
 The user may invoke with natural language or flags:
 
 ```
-/brag
-/brag --tone chaotic
-/brag --tone polished --format vertical
-/brag this. Make it feel like a ridiculous startup launch.
+/simform-brag
+/simform-brag --tone chaotic
+/simform-brag --tone polished --format vertical
+/simform-brag this. Make it feel like a ridiculous startup launch.
 ```
 
 Parse these options:
@@ -73,7 +73,7 @@ separate narration track.
 
 ## Visual identity: Simform brand takeover
 
-Every `/brag` video renders as Simform-branded Pre-Sales collateral. Step 2 and Step 3 must
+Every `/simform-brag` video renders as Simform-branded Pre-Sales collateral. Step 2 and Step 3 must
 use Simform's fixed brand — coral/purple/white palette, Simform typography, and an
 Apple-style bento-grid tile layout — for all generated chrome (backgrounds, title/highlight
 cards, transitions), regardless of the target project's own site colors.
@@ -129,13 +129,13 @@ When music is selected, include a compact `Music cue guidance` section: read the
 
 ## Step 3: Hand off to Hyperframes
 
-**Read:** The Hyperframes domain skills — `hyperframes-core`, `hyperframes-animation`, `hyperframes-creative`, `hyperframes-keyframes`, `hyperframes-cli`. /brag is its own workflow: do not enter the `hyperframes` entry-point intent interview or route into its generic promo / launch-video workflow.
+**Read:** The Hyperframes domain skills — `hyperframes-core`, `hyperframes-animation`, `hyperframes-creative`, `hyperframes-keyframes`, `hyperframes-cli`. /simform-brag is its own workflow: do not enter the `hyperframes` entry-point intent interview or route into its generic promo / launch-video workflow.
 **Read:** [references/step-3-compose.md](references/step-3-compose.md)
 **Read:** [references/audio.md](references/audio.md)
 
 Write the composition brief and use Hyperframes to create the video implementation in `<output-dir>/composition/`.
 
-`/brag` owns the product angle, source material, storyboard, tone, format, audio selection, music cue guidance, and delivery expectations. Hyperframes owns the concrete composition structure, exact animation timing, animation mechanics, runtime choices, linting rules, and render workflow.
+`/simform-brag` owns the product angle, source material, storyboard, tone, format, audio selection, music cue guidance, and delivery expectations. Hyperframes owns the concrete composition structure, exact animation timing, animation mechanics, runtime choices, linting rules, and render workflow.
 
 **Gate:** `npx hyperframes check` passes with zero errors inside `<output-dir>/composition/` (the single browser gate before render — see hyperframes-cli for what it audits).
 
@@ -153,7 +153,7 @@ Validate, preview, render to `<output-dir>/brag.mp4`, pick the best poster frame
 
 ## Tone system
 
-Eight tone presets ship with `/brag`. `presales` is the default when no `--tone` flag is
+Eight tone presets ship with `/simform-brag`. `presales` is the default when no `--tone` flag is
 passed. Each changes scripting energy, pacing, typography personality, and transition style.
 Presets are defaults, not limits.
 

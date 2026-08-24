@@ -6,8 +6,8 @@ Simform Bento's own tokens (never Apple's `#f5f5f7` background, blue/cyan/red/gr
 Sora + DM Sans fonts). If `hubeiqiao/apple-bento-grid` happens to be installed
 (`/plugin marketplace add hubeiqiao/apple-bento-grid`), Step 3 may read its fuller
 `design-system.md` directly for more depth — this file is the self-contained, Simform-branded
-subset `/brag` needs either way, so no teammate has to install a third-party plugin just to run
-`/brag`.
+subset `/simform-brag` needs either way, so no teammate has to install a third-party plugin just to run
+`/simform-brag`.
 
 **Use this technique only for the dense, multi-tile moments** — a "stat wall" variant of the
 Highlight Bento Grid and Metric Spotlight treatments in [`../FRAME.md`](../FRAME.md), when a

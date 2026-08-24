@@ -1,5 +1,5 @@
 {
-  "name": "brag",
+  "name": "simform-brag",
   "description": "You built it. Now brag — the Simform way. Turn any project into a short, on-brand Pre-Sales launch video with one command.",
   "owner": {
     "name": "Simform Solutions Pvt Ltd",
@@ -8,7 +8,7 @@
   },
   "plugins": [
     {
-      "name": "brag",
+      "name": "simform-brag",
       "source": "./",
       "description": "Turn any project website into a short, Simform-branded Pre-Sales showcase video using HyperFrames."
     }

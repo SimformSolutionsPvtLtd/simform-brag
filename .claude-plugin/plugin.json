@@ -1,5 +1,5 @@
 {
-  "name": "brag",
+  "name": "simform-brag",
   "description": "Turn any project into a short, Simform-branded Pre-Sales showcase video using HyperFrames — reads the project's code directly (no live URL or screenshots needed) and renders every run in Simform's fixed coral/purple/white visual identity.",
   "version": "0.3.0",
   "author": {
