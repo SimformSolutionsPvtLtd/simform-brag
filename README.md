@@ -1,10 +1,10 @@
-# /brag
+# /simform-brag
 
 **You built it. Now brag.**
 
 [![the /brag launch site — you built it, now brag](docs/assets/hero.png)](https://latent-spaces.github.io/brag/)
 
-`/brag` is a Claude Code skill that turns the project you created into a short, shareable launch video — music, motion, and share copy included. One command, powered by [Hyperframes](https://hyperframes.heygen.com/).
+`/simform-brag` is a Claude Code skill that turns the project you created into a short, shareable launch video — music, motion, and share copy included. One command, powered by [Hyperframes](https://hyperframes.heygen.com/).
 
 The looping video on the [launch site](https://latent-spaces.github.io/brag/) was made by `/brag` on this very repo. 
 
@@ -12,15 +12,15 @@ The looping video on the [launch site](https://latent-spaces.github.io/brag/) wa
 
 ```bash
 /plugin marketplace add SimformSolutionsPvtLtd/simform-brag
-/plugin install brag@brag
+/plugin install simform-brag@simform-brag
 ```
 
-Then run `/brag` inside any project.
+Then run `/simform-brag` inside any project.
 
 **Any other agent** — one command via the [`skills`](https://github.com/vercel-labs/skills) CLI (Cursor, Codex, Copilot, Gemini CLI, opencode, and more):
 
 ```bash
-npx skills add https://github.com/SimformSolutionsPvtLtd/simform-brag --skill brag
+npx skills add https://github.com/SimformSolutionsPvtLtd/simform-brag --skill simform-brag
 ```
 
 Add `-g` to install globally (available in every project); drop it to scope to the current one. ([browse on skills.sh](https://www.skills.sh/latent-spaces/brag/brag))
@@ -29,7 +29,7 @@ Add `-g` to install globally (available in every project); drop it to scope to t
 <summary>No installer? Copy the skill directly.</summary>
 
 ```bash
-rsync -a --exclude '.DS_Store' skills/brag/ ~/.claude/skills/brag/
+rsync -a --exclude '.DS_Store' skills/simform-brag/ ~/.claude/skills/simform-brag/
 ```
 
 Restart Claude Code after copying.
@@ -41,31 +41,31 @@ This repo exposes the skill at every agent's standard discovery path via symlink
 
 | Agent | How it discovers |
 |---|---|
-| **opencode** | Auto-detects from `.opencode/skills/brag/` at project root |
-| **Codex CLI** | Reads `.agents/skills/brag/`, walking up to repo root |
-| **Claude Code** | Also reads `.claude/skills/brag/` (in addition to the `.claude-plugin/` marketplace install above) |
-| **Other agents** | Point custom instructions at `skills/brag/SKILL.md` — see [`docs/other-agents.md`](docs/other-agents.md) |
+| **opencode** | Auto-detects from `.opencode/skills/simform-brag/` at project root |
+| **Codex CLI** | Reads `.agents/skills/simform-brag/`, walking up to repo root |
+| **Claude Code** | Also reads `.claude/skills/simform-brag/` (in addition to the `.claude-plugin/` marketplace install above) |
+| **Other agents** | Point custom instructions at `skills/simform-brag/SKILL.md` — see [`docs/other-agents.md`](docs/other-agents.md) |
 
-> **Windows users:** Git requires `git config core.symlinks true` (or `git clone -c core.symlinks=true`) and Windows Developer Mode or Administrator privileges to create symlinks. If symlinks don't work on your system, copy `skills/brag/` to the agent's skill directory manually instead.
+> **Windows users:** Git requires `git config core.symlinks true` (or `git clone -c core.symlinks=true`) and Windows Developer Mode or Administrator privileges to create symlinks. If symlinks don't work on your system, copy `skills/simform-brag/` to the agent's skill directory manually instead.
 
 ## Use it
 
 From any project directory, ask your agent:
 
 ```text
-let's /brag
+let's /simform-brag
 ```
 
 Or steer the tone:
 
 ```text
-/brag --tone "fake Series A launch from 2016"
+/simform-brag --tone "fake Series A launch from 2016"
 ```
 
 Voiceover is off by default. Enable it explicitly with:
 
 ```text
-/brag --voice
+/simform-brag --voice
 ```
 
 Narration uses Kokoro through Hyperframes when enabled.
@@ -74,7 +74,7 @@ You get a `brag-output/` folder with the plan, a composition brief, share copy, 
 
 ## How it works
 
-`/brag` owns the story — the product angle, tone, and which moments to show. It hands a focused brief to [Hyperframes](https://hyperframes.heygen.com/), which builds, times, and renders the video.
+`/simform-brag` owns the story — the product angle, tone, and which moments to show. It hands a focused brief to [Hyperframes](https://hyperframes.heygen.com/), which builds, times, and renders the video.
 
 ## Requirements
 
@@ -85,13 +85,13 @@ You get a `brag-output/` folder with the plan, a composition brief, share copy, 
 
 ## What's in this repo
 
-- `skills/brag/` — the skill, references, and bundled music + SFX
+- `skills/simform-brag/` — the skill, references, and bundled music + SFX
 - `examples/` — fake product sites used as a benchmark suite
 - `docs/` — the launch site (GitHub Pages)
 - `.claude-plugin/` — plugin manifest + marketplace catalog
-- `.claude/skills/brag/` — symlink → `skills/brag/` (Claude Code discovery)
-- `.agents/skills/brag/` — symlink → `skills/brag/` (Codex CLI + opencode discovery)
-- `.opencode/skills/brag/` — symlink → `skills/brag/` (opencode discovery)
+- `.claude/skills/simform-brag/` — symlink → `skills/simform-brag/` (Claude Code discovery)
+- `.agents/skills/simform-brag/` — symlink → `skills/simform-brag/` (Codex CLI + opencode discovery)
+- `.opencode/skills/simform-brag/` — symlink → `skills/simform-brag/` (opencode discovery)
 
 ## Credits
 

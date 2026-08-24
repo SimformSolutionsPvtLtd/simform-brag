@@ -106,7 +106,7 @@ Write down:
 
 **These colors are for context and captioning only.** Record them in `brag-plan.md`'s source
 palette line and in `composition-brief.md`'s Source Material section so the plan can describe
-what's being shown — but they no longer set the video's chrome. Every `/brag` video renders in
+what's being shown — but they no longer set the video's chrome. Every `/simform-brag` video renders in
 Simform's fixed brand (coral/purple/white, Simform typography, bento-grid tiles) regardless of
 the target project's palette — see
 [../frame-presets/simform-bento/FRAME.md](../frame-presets/simform-bento/FRAME.md) and Step

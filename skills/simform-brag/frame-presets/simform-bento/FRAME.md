@@ -2,7 +2,7 @@
 version: alpha
 name: Simform Bento — Frame (video / frame layer)
 description: >
-  Full Simform brand takeover for every /brag video, regardless of the project being bragged
+  Full Simform brand takeover for every /simform-brag video, regardless of the project being bragged
   about. The unit is the frame (1920×1080). Atoms are identical and sacred — Simform's real
   coral (#EF5366, gradient to #D71E23) + violet (#6740BA, with lighter #A077F8) dual accent on a
   white / pale-lavender bento-tile grid, Manrope (display + body) + JetBrains Mono (labels /
@@ -350,7 +350,7 @@ supporting ones arriving to confirm it.
 Between scenes, prefer a soft crossfade or a tile-level reflow (outgoing tiles fade+settle down
 slightly as incoming tiles arrive) over a hard cut, wipe, or flash — this system's register is
 Simform's confident B2B engineering voice ("Agile in mind, spirit, and speed"), not a joke and not
-chaos. A `chaotic`/`yc-parody` `/brag` tone may run this faster and punchier, but should keep the
+chaos. A `chaotic`/`yc-parody` `/simform-brag` tone may run this faster and punchier, but should keep the
 same scale+fade grammar rather than switching to glitch/flash mechanics that break the brand
 register. Exact stagger intervals, easing curves, and runtime (GSAP/CSS/WAAPI) belong to
 `hyperframes-animation`, not here.
