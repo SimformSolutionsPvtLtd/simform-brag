@@ -2,7 +2,7 @@
 
 **You built it. Now brag.**
 
-[![the /brag launch site — you built it, now brag](docs/assets/hero.png)](https://latent-spaces.github.io/brag/)
+[![Simform — you built it, now brag](docs/assets/hero-simform.svg)](https://github.com/SimformSolutionsPvtLtd/simform-brag)
 
 `/simform-brag` is a Claude Code skill that turns the project you created into a short, shareable launch video — music, motion, and share copy included. One command, powered by [Hyperframes](https://hyperframes.heygen.com/).
 
