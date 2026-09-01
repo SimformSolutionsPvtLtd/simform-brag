@@ -15,6 +15,12 @@ scene needs 5+ small metrics at once. The Hero Bento Cover, Reveal Frame, Quote 
 Sign-off Bento treatments keep FRAME.md's own generous `gap-bento`/`tile-pad` spacing — don't
 zero-gap those; they're deliberately airy bookend moments, not a stat wall.
 
+The wall sits on the same fixed `{colors.violet}` ground as every other treatment in
+`FRAME.md` — it is not a white page. Each card is a white or lavender-100 (or, for the one
+rationed quote card, ink) surface floating on that violet ground; the 6px gaps between cards show
+a thin sliver of the violet ground through them, which is exactly what should happen — the wall
+is dense, not gapless-onto-nothing.
+
 ## The five zero-gap rules (verbatim from the source technique)
 
 1. Cards **fill** their grid cell — default `align-items: stretch`. Never set `align-items: start`.
@@ -58,9 +64,11 @@ Same seven card shapes as the source technique, restyled with Simform Bento's ow
   once per wall, same rule as everywhere else in this system), with every *other* stat numeral in
   the same wall styled in `{colors.violet}` at `{typography.tile-title}` weight instead + a
   `{typography.tile-label}` caption.
-- **`.card--category`** — `background: {colors.violet-06}`; a `{typography.eyebrow}` label in
-  `{colors.violet}` + a `{typography.tile-title}` focus line + a row of `tag-pill` components
-  (already defined in `FRAME.md`) — the wall's direct use of the `tag-pill` component.
+- **`.card--category`** — `background: {colors.lavender-100}` (not `violet-06` — that token is an
+  opacity tint calibrated for a white ground and is retired as a tile/card fill now the ground is
+  violet; see `FRAME.md`'s Colors section); a `{typography.eyebrow}` label in `{colors.violet}` +
+  a `{typography.tile-title}` focus line + a row of `tag-pill` components (already defined in
+  `FRAME.md`) — the wall's direct use of the `tag-pill` component.
 - **`.card--chart`** — `background: {colors.white}`; header row (`{typography.tile-label}` title +
   a small badge number in whichever of coral/violet wasn't already spent this wall); bars sized
   `height = (value / maxValue) * maxBarHeight`, gradient
@@ -72,7 +80,9 @@ Same seven card shapes as the source technique, restyled with Simform Bento's ow
   analog of the source technique's Badge card, built from FRAME.md's own icon-chip instead of a
   new component.
 - **`.card--quote`** (at most one per wall, the wall's single dark card — matches the source
-  technique's own "quote is always the dark card" pattern) — `background: {colors.ink}`; a
+  technique's own "quote is always the dark card" pattern) — `background: {colors.ink}` with
+  `{borders.hairline}` (ink and the violet ground are close enough in lightness — 2.5:1 — that a
+  hairline keeps the card's edge from reading as a soft blend into the ground); a
   `{typography.quote}` line in white, with the emphasized phrase in `{colors.violet-light}` (never
   coral here — coral is reserved for whichever stat/chart/badge already claimed it this wall).
 - **`.card--highlight`** — `background: {gradients.brand}` (coral→coral-deep) — the wall's coral
@@ -88,7 +98,8 @@ wall uses violet.
 
 ## What changed from the source technique
 
-- Page background: Apple's `#f5f5f7` → Simform's `{colors.white}`.
+- Page background: Apple's `#f5f5f7` → Simform's `{colors.violet}` ground, with white/lavender-100
+  cards floating on top (matching `FRAME.md`'s full-composition rule — see its Colors section).
 - Accent palette: Apple's blue/cyan/red/green → Simform's violet (workhorse) + coral (rare
   spotlight), per the same discipline used throughout `FRAME.md`.
 - Fonts: Sora + DM Sans → Manrope + JetBrains Mono (`FRAME.md`'s own typography tokens).
@@ -96,6 +107,8 @@ wall uses violet.
   other small tile in this system.
 - The dark "quote card is always dark" pattern is kept, but it's now the wall's single ink-colored
   card (an intentional, rationed exception) rather than a fixed theme choice.
+- Internal card content follows `FRAME.md`'s Content Rhythm rule (even `{spacing.content-gap}`
+  between stacked elements) rather than the source technique's own ad-hoc per-card spacing.
 
 ## Attribution
 
