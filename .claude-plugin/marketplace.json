@@ -11,6 +11,29 @@
       "name": "simform-brag",
       "source": "./",
       "description": "Turn any project website into a short, Simform-branded Pre-Sales showcase video using HyperFrames."
+    },
+    {
+      "name": "simform-archify",
+      "source": {
+        "source": "git-subdir",
+        "url": "SimformSolutionsPvtLtd/simform-archify",
+        "path": "archify",
+        "ref": "main"
+      },
+      "description": "Simform-branded, validated architecture diagrams as explorable standalone HTML, with official Azure, Microsoft 365, Entra, Fabric and Dynamics 365 icons, ready to embed in SharePoint.",
+      "author": {
+        "name": "Simform Solutions Pvt Ltd",
+        "email": "innovations@simformsolutions.com"
+      },
+      "homepage": "https://github.com/SimformSolutionsPvtLtd/simform-archify",
+      "license": "Apache-2.0",
+      "keywords": [
+        "diagram",
+        "architecture",
+        "azure",
+        "sharepoint",
+        "simform"
+      ]
     }
   ]
 }
